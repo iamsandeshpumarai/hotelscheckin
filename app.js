@@ -130,7 +130,12 @@ app.get("/demouser", async (req, res) => {
 
 // Use routers
 app.use('/listing', listingRouter);
+
+
 app.use('/', userRouter);
+app.get('/', (req, res) => {
+    res.render('listing/index.ejs');
+});
 
 
 app.listen(port, () => {
