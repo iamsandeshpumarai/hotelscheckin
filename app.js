@@ -132,12 +132,7 @@ app.get("/demouser", async (req, res) => {
 app.use('/listing', listingRouter);
 app.use('/', userRouter);
 
-// Catch-all Route for Invalid URLs
-app.all("*", (req, res, next) => {
-    next(new expresserror(404, "Page not found!"));
-});
 
-// Server Listener
 app.listen(port, () => {
     console.log(`We are live on port number ${port}`);
 });
